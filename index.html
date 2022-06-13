@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--Box Icons-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="content">
+        <div class="top">
+            <input type="text" id="inputNewTask" placeholder="Adicione uma nova tarefa">
+            <button id="btnAddTask">
+                <i class='bx bx-plus'></i>
+            </button>
+        </div>
+
+        <ul id="listTasks"></ul>
+    </div>
+
+    <div id="editWindow">
+        <button id="editWindowBtnClose">
+            <i class='bx bx-x' ></i>
+        </button>
+        <h2 id="idTaskEdit"></h2>
+        <hr>
+        <form>
+            <div class="frm-line">
+                <label for="name">Nome</label>
+                <input type="text" id="inputTaskNameEdit">
+            </div>
+            <div class="frm-line">
+                <button id="btnUpdateTask">Salvar</button>
+            </div>
+        </form>
+    </div>
+    <div id="editWindowBackground"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

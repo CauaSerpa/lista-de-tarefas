@@ -1,0 +1,293 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* Variables CSS */
+:root
+{
+	--header-height: 3rem;
+	--font-semi: 600;
+}
+/* Colors */
+:root
+{
+    --primary-color: #000000;
+    --secondary-color: #FFFFFF;
+	--black: #181818;
+    --gray: #7E7E7E;
+    --purple: #6e06af;
+    --second-golden: #755e32;
+
+    --shadow: rgba(0, 0, 0, .5);
+}
+/* Fonte */
+:root
+{
+	--body-font: 'Poppins', sans-serif;
+	--big-font-size: 2.5rem;
+	--h2-font-size: 1.2rem;
+	--normal-font-size: 1rem;
+	--little-font-size: .875rem;
+}
+@media screen and (min-width: 768px)
+{
+	:root
+	{
+		--big-font-size: 3.5rem;
+		--h2-font-size: 1.2rem;
+		--normal-font-size: 1rem;
+	    --little-font-size: .938rem;
+	}
+}
+/* Margens */
+:root
+{
+	--mb-1: 0.5rem;
+	--mb-2: 1rem;
+	--mb-3: 1.5rem;
+	--mb-4: 2rem;
+	--mb-5: 2.5rem;
+	--mb-6: 3rem;
+}
+/* z index */
+:root{
+	--z-back: -10;
+	--z-normal: 1;
+	--z-tooltip: 10;
+	--z-fixed: 100;
+}
+/* Layout */
+.bd-grid
+{
+	max-width: 1024px;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-column-gap: 2rem;
+	width: calc(100% - 2rem);
+	margin-left: var(--mb-2);
+	margin-right: var(--mb-2);
+}
+.l-header
+{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: var(--z-fixed);
+}
+/* Base */
+*,::before,::after
+{
+	box-sizing: border-box;
+}
+html
+{
+	scroll-behavior: smooth;
+}
+body
+{
+	margin: var(--header-heigth) 0 0 0;
+	font-family: var(--body-font);
+	font-size: var(--normal-font-size);
+    color: var(--secondary-color);
+	background: var(--primary-color);
+}
+h1,h2,p
+{
+	margin: 0;
+}
+ul
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+a
+{
+	text-decoration: none;
+    color: var(--secondary-color);
+}
+img
+{
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+/* Class CSS */
+.content
+{
+    margin: 0 auto;
+    width: 90%;
+    max-width: 550px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: #2b2a2a;
+    padding: 55px;
+    border-radius: .5rem;
+}
+.top
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+.top input
+{
+    width: 350px;
+    padding: 15px;
+    border-radius: .5rem;
+    border: 1px solid #191818;
+    outline: none;
+    font-size: var(--h2-font-size);
+    background: #191818;
+    color: var(--secondary-color);
+}
+.top button
+{
+    width: 54px;
+    border-radius: .5rem;
+    border: 1px solid #191818;
+    background: #191818;
+    color: var(--secondary-color);
+    outline: none;
+}
+.top button:hover
+{
+    background: #1f1e1e;
+    cursor: pointer;
+}
+#btnAddTask i
+{
+    font-size: 1.2rem;
+}
+#listTasks
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#listTasks li
+{
+    height: 54px;
+    padding: 15px;
+    background: #191818;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.btnAction
+{
+    border-radius: 50%;
+    border: 1px solid #191818;
+    width: 38px;
+    height: 38px;
+    margin-right: 8px;
+    cursor: pointer;
+    background: #2b2a2a;
+    color: var(--secondary-color);
+}
+.btnAction:hover
+{
+    background: #3c3a3a;
+}
+.taskText
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 290px;
+    white-space: nowrap;
+}
+#editWindow
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    background: #191818;
+    border: 1px solid #2f2e2e;
+    width: 415px;
+    border-radius: .5rem;
+    z-index: 200;
+    display: none;
+}
+#editWindow.open
+{
+    display: block !important;
+}
+#editWindowBackground
+{
+    position: fixed;
+    top: 0;
+    background-color: var(--primary-color);
+    bottom: 0;
+    left: 0;
+    opacity: 0.9;
+    z-index: var(--z-fixed);
+    right: 0;
+    display: none;
+}
+#editWindowBackground.open
+{
+    display: block !important;
+}
+#editWindowBtnClose
+{
+    position: absolute;
+    top: -25px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #2d2c2c;
+    background: #2d2c2c;
+    color: var(--secondary-color);
+    outline: none;
+    cursor: pointer;
+}
+#editWindowBtnClose i
+{
+    font-size: 1.2rem;
+}
+form
+{
+    width: 100%;
+    margin-top: 20px;
+}
+.frm-line
+{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.frm-line label
+{
+    margin-bottom: 7px;
+}
+.frm-line input
+{
+    padding: 15px;
+    border-radius: .5rem;
+    outline: none;
+    border: 1px solid #191818;
+    font-size: 1.2rem;
+    background: #2b2c2c;
+    color: var(--secondary-color);
+}
+.frm-line button
+{
+    background: #2b2c2c;
+    border: 1px solid #191818;
+    padding: 7px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    color: #CCC;
+    cursor: pointer;
+    height: 50px;
+    font-size: 1.3rem;
+    outline: none;
+}
+.frm-line button:hover
+{
+    background: #3c3a3a;
+}
